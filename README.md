@@ -12,7 +12,7 @@ Docker : Tested on 4.34.3 (170107)
 
 ### Database Schema
 
-![Alt text](/DATABASE_SCHEMA.png?raw=true "DB_SCHEMA")
+![Alt text](/docs/DATABASE_SCHEMA.png?raw=true "DB_SCHEMA")
 
 ### Clone this repository:
 
