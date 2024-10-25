@@ -15,6 +15,9 @@ on:
       - 'README.md'
       - '.gitignore'
       - 'docs/**'
+      - 'k8s/**'
+      - 'docker-compose.yml'
+      - '.gitattributes'
   pull_request:
     branches: [ "main" ]
 
