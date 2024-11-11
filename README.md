@@ -3,11 +3,12 @@
 ### Requirements:
 
 ```
-Spring Boot: 3.3.5
+Git: 2.47.1
+Spring Boot: 3.4.0
 Maven: 3.9+
 Java: 17
 Database : MYSQL/H2
-Docker : Tested on 4.34.3 (170107)
+Docker Desktop(Optional): Tested on 4.36.0
 ```
 
 ### Database Schema
@@ -85,21 +86,20 @@ http://localhost:8080/h2-console
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.3.5/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.3.5/maven-plugin/build-image.html)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/3.3.5/reference/data/sql.html#data.sql.jpa-and-spring-data)
-* [Flyway Migration](https://docs.spring.io/spring-boot/3.3.5/how-to/data-initialization.html#howto.data-initialization.migration-tool.flyway)
-* [Spring Web](https://docs.spring.io/spring-boot/3.3.5/reference/web/servlet.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/maven-plugin)
+* [Create an OCI image](https://docs.spring.io/spring-boot/maven-plugin/build-image.html)
+* [Spring Web](https://docs.spring.io/spring-boot/reference/web/servlet.html)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/reference/data/sql.html#data.sql.jpa-and-spring-data)
+* [Flyway Migration](https://docs.spring.io/spring-boot/how-to/data-initialization.html#howto.data-initialization.migration-tool.flyway)
 
 ### Guides
 
 The following guides illustrate how to use some features concretely:
 
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 
 ### Maven Parent overrides
 
@@ -108,4 +108,3 @@ While most of the inheritance is fine, it also inherits unwanted elements like `
 parent.
 To prevent this, the project POM contains empty overrides for these elements.
 If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
-
