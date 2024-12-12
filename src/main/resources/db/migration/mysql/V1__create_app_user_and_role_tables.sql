@@ -1,28 +1,33 @@
-CREATE TABLE app_user
+create table app_users
 (
-    user_id    bigint       NOT NULL AUTO_INCREMENT,
-    email      varchar(255) NOT NULL,
-    first_name varchar(255) NOT NULL,
-    last_name  varchar(255) NOT NULL,
-    password   varchar(255) DEFAULT NULL,
-    PRIMARY KEY (user_id)
-);
+    user_id    bigint       not null,
+    email      varchar(255) not null,
+    first_name varchar(255) not null,
+    last_name  varchar(255) not null,
+    password   varchar(255),
+    primary key (user_id),
+    constraint UQ_APP_USERS_EMAIL unique (email)
+) engine=InnoDB;
 
-CREATE TABLE role
+create table roles
 (
-    role_id   bigint NOT NULL AUTO_INCREMENT,
-    role_desc varchar(255) DEFAULT NULL,
-    role_name varchar(255) DEFAULT NULL,
-    PRIMARY KEY (role_id)
-);
+    role_id   bigint not null,
+    role_desc varchar(255),
+    role_name varchar(255),
+    primary key (role_id),
+    constraint UQ_ROLES_ROLE_NAME unique (role_name)
+) engine=InnoDB;
 
-CREATE TABLE app_user_role_mapping
+create table app_users_roles_mapping
 (
-    id      bigint NOT NULL AUTO_INCREMENT,
-    user_id bigint NOT NULL,
-    role_id bigint NOT NULL,
-    PRIMARY KEY (id),
-    CONSTRAINT UNIQUE_app_user_role_mapping_user_id_role_id UNIQUE (user_id, role_id),
-    CONSTRAINT FK_app_user_role_mapping_app_user_id FOREIGN KEY (user_id) REFERENCES app_user (user_id),
-    CONSTRAINT FK_app_user_role_mapping_role_id FOREIGN KEY (role_id) REFERENCES role (role_id)
-);
+    role_id bigint not null,
+    user_id bigint not null,
+    constraint UQ_APP_USERS_ROLES_MAPPING_APP_USER_ID_ROLE_ID primary key (user_id, role_id),
+    constraint FK_APP_USERS_ROLES_MAPPING_ROLES_ROLE_ID foreign key (role_id) references roles (role_id),
+    constraint FK_APP_USERS_ROLES_MAPPING_APP_USERS_USER_ID foreign key (user_id) references app_users (user_id)
+) engine=InnoDB;
+
+create table app_users_seq (next_val bigint) engine=InnoDB;
+insert into app_users_seq values (1);
+create table roles_seq (next_val bigint) engine=InnoDB;
+insert into roles_seq values (1);

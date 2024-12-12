@@ -1,18 +1,20 @@
-CREATE TABLE permission
+create table permissions
 (
-    permission_id   bigint NOT NULL AUTO_INCREMENT,
-    permission_desc varchar(255) DEFAULT NULL,
-    permission_name varchar(255) DEFAULT NULL,
-    PRIMARY KEY (permission_id)
-);
+    permission_id   bigint not null,
+    permission_desc varchar(255),
+    permission_name varchar(255),
+    primary key (permission_id),
+    constraint UQ_PERMISSIONS_PERMISSION_NAME unique (permission_name)
+) engine=InnoDB;
 
-CREATE TABLE role_permission_mapping
+create table roles_permissions_mapping
 (
-    id            bigint NOT NULL AUTO_INCREMENT,
-    permission_id bigint NOT NULL,
-    role_id       bigint NOT NULL,
-    PRIMARY KEY (id),
-    CONSTRAINT UNIQUE_role_permission_mapping_permission_id_role_id UNIQUE (permission_id, role_id),
-    CONSTRAINT FK_role_permission_mapping_role_id FOREIGN KEY (role_id) REFERENCES role (role_id),
-    CONSTRAINT FK_role_permission_mapping_permission_id FOREIGN KEY (permission_id) REFERENCES permission (permission_id)
-);
+    permission_id bigint not null,
+    role_id       bigint not null,
+    constraint UQ_ROLES_PERMISSIONS_MAPPING_USER_ID_ROLE_ID primary key (role_id, permission_id),
+    constraint FK_ROLES_PERMISSIONS_MAPPING_ROLES_ROLE_ID foreign key (role_id) references roles (role_id),
+    constraint FK_ROLES_PERMISSIONS_MAPPING_PERMISSIONS_PERMISSION_ID foreign key (permission_id) references permissions (permission_id)
+) engine=InnoDB;
+
+create table permissions_seq (next_val bigint) engine=InnoDB;
+insert into permissions_seq values (1);

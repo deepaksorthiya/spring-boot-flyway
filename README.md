@@ -42,12 +42,23 @@ cd spring-boot-3-flyway
 ### Using MYSQL DB (Docker Should Be Running)
 
 ```bash
-docker compose up
+docker compose --profile mysql up
 ```
 
 ```bash
 ./mvnw spring-boot:run -D"spring.profiles.active=mysql"
 ```
+
+### Using Postgres DB (Docker Should Be Running)
+
+```bash
+docker compose --profile postgres up
+```
+
+```bash
+./mvnw spring-boot:run -D"spring.profiles.active=postgres"
+```
+
 
 ### h2 database console :
 
