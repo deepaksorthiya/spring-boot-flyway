@@ -64,7 +64,7 @@ docker compose --profile postgres up
 
 http://localhost:8080/h2-console
 
-## Migration Using Maven Plugin
+### Migration Using Maven Plugin for MYSQL
 
 ```bash
 ./mvnw flyway:info -Pmysql
@@ -82,10 +82,34 @@ http://localhost:8080/h2-console
 ./mvnw flyway:clean -D"flyway.cleanDisabled=false" -Pmysql
 ```
 
-## Maven passing flyway config in command line
+### Maven passing flyway config in command line
 
 ```bash
 ./mvnw -D"flyway.url=jdbc:mysql://localhost:3306/testdb" -D"flyway.user=root" -D"flyway.password=root" flyway:migrate -Pmysql
+```
+
+## Migration Using Maven Plugin for Postgres
+
+```bash
+./mvnw flyway:info -Ppostgres
+```
+
+```bash
+./mvnw flyway:migrate -Ppostgres
+```
+
+```bash
+./mvnw flyway:validate -Ppostgres
+```
+
+```bash
+./mvnw flyway:clean -D"flyway.cleanDisabled=false" -Ppostgres
+```
+
+## Maven passing flyway config in command line
+
+```bash
+./mvnw -D"flyway.url=jdbc:postgresql://localhost:5432/testdb" -D"flyway.user=postgres" -D"flyway.password=postgres" flyway:migrate -Ppostgres
 ```
 
 ## Flyway Maven Plugin Docs
