@@ -15,11 +15,14 @@ on:
       - 'README.md'
       - '.gitignore'
       - 'docs/**'
+      - 'images/**'
       - 'k8s/**'
       - 'docker-compose.yml'
+      - 'docker/**'
       - '.gitattributes'
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -35,4 +38,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Clean Build Test with Maven
-        run: mvn --batch-mode --update-snapshots clean package --file pom.xml
+        run: mvn clean package --file pom.xml --batch-mode --update-snapshots
