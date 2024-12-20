@@ -1,10 +1,12 @@
+[![Java Maven Build Test](https://github.com/deepaksorthiya/spring-boot-3-flyway/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/spring-boot-3-flyway/actions/workflows/maven-build.yml)
+
 # Getting Started
 
 ### Requirements:
 
 ```
 Git: 2.47.1
-Spring Boot: 3.4.0
+Spring Boot: 3.4.1
 Maven: 3.9+
 Java: 17
 Database : MYSQL/H2
@@ -58,7 +60,6 @@ docker compose --profile postgres up
 ```bash
 ./mvnw spring-boot:run -D"spring.profiles.active=postgres"
 ```
-
 
 ### h2 database console :
 
