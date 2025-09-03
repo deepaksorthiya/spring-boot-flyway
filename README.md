@@ -5,12 +5,12 @@
 ### Requirements:
 
 ```
-Git: 2.49.0
-Spring Boot: 3.4.4
+Git: 2.51.0
+Spring Boot: 3.5.5
 Maven: 3.9+
-Java: 17
+Java: 24
 Database : MYSQL/H2
-Docker Desktop(Optional): Tested on 4.39.0
+Docker Desktop(Optional): Tested on 4.45.0
 ```
 
 ### Database Schema
