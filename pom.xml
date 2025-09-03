@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>spring-boot-3-flyway</artifactId>
+    <artifactId>spring-boot-flyway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-3-flyway</name>
+    <name>spring-boot-flyway</name>
     <description>Spring Boot Flyway Database Migration</description>
     <url/>
     <licenses>

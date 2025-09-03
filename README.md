@@ -1,4 +1,4 @@
-[![Java Maven Build Test](https://github.com/deepaksorthiya/spring-boot-3-flyway/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/spring-boot-3-flyway/actions/workflows/maven-build.yml)
+[![Java Maven Build Test](https://github.com/deepaksorthiya/spring-boot-flyway/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/spring-boot-flyway/actions/workflows/maven-build.yml)
 
 # Getting Started
 
@@ -20,11 +20,11 @@ Docker Desktop(Optional): Tested on 4.45.0
 ### Clone this repository:
 
 ```bash
-git clone https://github.com/deepaksorthiya/spring-boot-3-flyway.git
+git clone https://github.com/deepaksorthiya/spring-boot-flyway.git
 ```
 
 ```bash
-cd spring-boot-3-flyway
+cd spring-boot-flyway
 ```
 
 ### Build Project:
